@@ -31,6 +31,7 @@ body{
   padding: 10px;
   margin: 15px;
   border-radius: 0px!important;
+  border: 2px solid white!important;
 }
 
 .btn:hover{
