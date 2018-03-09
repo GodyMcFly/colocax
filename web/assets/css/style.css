@@ -2,6 +2,7 @@ body{
   height: 100%;
   background-image:linear-gradient(to right, #2b5876, #4e4376);
   background-image:-moz-linear-gradient(left, #2b5876, #4e4376);
+  padding: 25px;
 }
 
 .gradient_blue{
@@ -10,7 +11,7 @@ body{
 }
 
 .div_center{
-  width: 70%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -22,15 +23,24 @@ body{
   justify-content: center;
 }
 
+.btn_langues_right{
+  display: flex;
+  text-align: right;
+  justify-content: right;
+}
+
 .fos_user_registration_register{
-  color: white;
-  margin-left: 3%;
-  font-size: 24px;
 }
 
 .title{
+  color: white;
+  text-transform: uppercase;
+}
+
+.card{
   background-color: white;
-  padding: 5px;
+  padding: 3%;
+  color: #2b5876;
 }
 
 .btn{
@@ -50,15 +60,44 @@ body{
   color: #2b5876;
   background-color: white;
 }
+
+.btn_langues{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color: white;
+  padding: 10px;
+  border-radius: 0px!important;
+  line-height: 15px;
+}
+
+.btn_langues:hover{
+  text-decoration: none;
+  text-transform: none;
+  color: #2b5876;
+  background-color: white;
+}
+
+.btn_langues:active{
+  text-decoration: none;
+  text-transform: none;
+  color: #2b5876;
+  background-color: white;
+}
+
 .espace{
   height: 50px;
 }
 
 .nav-contour{
-  border: 1px solid white;
-  margin: 25px;
 }
 
 .text-color{
   color: #2b5876!important;
+}
+
+#flag_icon{
+  height: 17px;
+  float: left;
+  padding-right: 5px;
 }

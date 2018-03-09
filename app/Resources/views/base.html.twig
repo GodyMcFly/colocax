@@ -18,17 +18,37 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-color" href="{{ path('fos_user_profile_show') }}">Se connecter</a>
+              <a class="nav-link text-color" href="{{ path('fos_user_security_login') }}">{{'login'|trans }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-color" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+              <a class="nav-link text-color" href="{{ path('fos_user_registration_register') }}">{{'sign_up'|trans }}</a>
             </li>
+            <li class="nav-item">
+              <ul id="choix_langues">
+                <li>
+                  <a href="{{ path('homepage', {'_locale':'fr'}) }}">Français</a>
+                </li>
+                <li>
+                  <a href="{{ path('homepage', {'_locale':'en'}) }}">English</a>
+                </li>
+              </ul>
+            </li>
+              <!--
+              <a href="{{ path('homepage', {'_locale':'fr'}) }}">Français</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ path('homepage', {'_locale':'en'}) }}">English</a>
+            </li>-->
           </ul>
         </div>
       </nav>
     </div>
+    <div class="btn_langues_right">
+      <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'langue_fr'|trans }}</a>
+      <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'langue_en'|trans }}</a>
+  </div>
       <div class="div_center">
       <div class="espace"></div>
 
