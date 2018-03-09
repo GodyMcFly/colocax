@@ -1,0 +1,13 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block content %}
+  <p class="text-center">
+  <div class="title">
+    <h1 class="text-center">{{'inscription_title'|trans }}</h1>
+  </div>
+  </p>
+{% endblock %}
+
+{% block fos_user_content %}
+{% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}
