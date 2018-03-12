@@ -1,9 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p class="text-center text-white"><h1 class="text-center text-white">{{ 'slogan'|trans }}</h1></p>
-    <div class="btn_center">
-      <a href="{{ path('lire') }}" class="btn">{{ 'rechercher_ann'|trans }}</a>
-      <a href="{{ path('create') }}" class="btn">{{ 'creer_ann'|trans }}</a>
-  </div>
+    <p class="text-center text-white"><h1 class="text-center text-white">{{ 'nav.slogan'|trans }}</h1></p>
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="btn_center">
+          <a href="{{ path('lire') }}" class="btn">{{ 'nav.rechercher_ann'|trans }}</a>
+          <a href="{{ path('create') }}" class="btn">{{ 'nav.creer_ann'|trans }}</a>
+      </div>
+    {% else %}
+        <div class="btn_center">
+          <a href="{{ path('fos_user_security_login') }}" class="btn">{{ 'nav.rechercher_ann'|trans }}</a>
+          <a href="{{ path('fos_user_security_login') }}" class="btn">{{ 'nav.creer_ann'|trans }}</a>
+      </div>
+    {% endif %}
 {% endblock %}

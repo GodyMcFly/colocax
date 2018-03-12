@@ -3,21 +3,21 @@
 {% block body %}
   <div class="div_center">
 
-    <p class="text-center text-white"><h1 class="text-center text-white">Liste des annonces</h1></p>
+    <p class="text-center text-white"><h1 class="text-center text-white">{{'annonces.liste'|trans }}</h1></p>
 
   {% for annonce in annonces %}
-  <li>Titre : {{ annonce.titre }}</li>
-  <p>Places : {{ annonce.places }}  </p>
-  <p> Description : {{ annonce.description }} </p>
+  <li>{{'annonces.title'|trans }} : {{ annonce.titre }}</li>
+  <p>{{'annonces.places'|trans }} : {{ annonce.places }}  </p>
+  <p> {{'annonces.description'|trans }} : {{ annonce.description }} </p>
 
 
     <form action="{{ path('supprimer') }}" method="POST">
   <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
-  <button type="submit" class="btn btn-dark" >Supprimer l'annonce</button>
+  <button type="submit" class="btn btn-dark" >{{'annonces.supprimer'|trans }}</button>
   </form>
     <form action="{{ path('update') }}" method="POST">
     <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
-  <button  type="submit" class="btn btn-dark" >Modifier l'annonce</button>
+  <button  type="submit" class="btn btn-dark" >{{'annonces.modifier'|trans }}</button>
 </form>
   <br />
 {% endfor %}

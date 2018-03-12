@@ -23,22 +23,22 @@
         <ul class="navbar-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'logout'|trans }}</a>
+                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'nav.logout'|trans }}</a>
               </li>
             {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'login'|trans }}</a>
+                <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'nav.login'|trans }}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'sign_up'|trans }}</a>
+                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'nav.sign_up'|trans }}</a>
               </li>
             {% endif %}
         </div>
       </nav>
     </div>
     <div class="btn_langues_right">
-      <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'langue_fr'|trans }}</a>
-      <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'langue_en'|trans }}</a>
+      <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
+      <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
   </div>
       <div class="div_center">
       <div class="espace"></div>

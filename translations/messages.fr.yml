@@ -1,10 +1,28 @@
-login: 'Se connecter'
-sign_up: 'S''inscrire'
-slogan: 'Recherchez la meilleure annonce ou créez la votre !'
-rechercher_ann: 'Rechercher une annonce'
-creer_ann: 'Créer une annonce'
-inscription_title: 'Créer un compte'
-connexion_title: 'Connexion'
-langue_fr: 'Français'
-langue_en: 'Anglais'
-logout: Se déconnecter
+nav:
+    slogan: 'Recherchez la meilleure annonce ou créez la votre !'
+    rechercher_ann: 'Rechercher une annonce'
+    creer_ann: 'Créer une annonce'
+    langue_fr: 'Français'
+    langue_en: 'Anglais'
+    logout: 'Se déconnecter'
+    login: 'Se connecter'
+    sign_up: 'S''inscrire'
+
+user:
+    inscription_title: 'Créer un compte'
+    connexion_title: 'Connexion'
+
+annonces:
+    liste: 'Liste des annonces'
+    title: 'Titre'
+    places: 'Nombre de places'
+    description: 'Description'
+    supprimer: 'Supprimer l''annonce'
+    modifier: 'Modifier l''annonce'
+    adresse: 'Adresse'
+    ville: 'Type de logement'
+    pieces: 'Nombre de pièces'
+    surface: 'Surface (en m²)'
+    loyer: 'Loyer (HC)'
+    charges: 'charges'
+    ajouter: 'Ajouter'
