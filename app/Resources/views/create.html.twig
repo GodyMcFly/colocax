@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <div class="div_center">
+
+    <p class="text-center text-white"><h1 class="text-center text-white">Créer une annonce</h1></p>
+
+<form action= "{{ path('ajout') }}" method="POST">
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default" >Titre de l'annonce</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="titre">
+</div>
+
+
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default" >Nombre de places</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="places">
+</div>
+
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default" >Adresse</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="adresse">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default" >Ville</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="ville">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default">Type du logement</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="type">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default">Nombre de pièces</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nbrpieces">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default">Surface</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="surface">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default">Loyer HC</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="loyerhc">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-default">Charges</span>
+</div>
+<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="charges">
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Description</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea" name="descr"></textarea>
+</div>
+
+<button type="submit" class="btn btn-dark">Ajouter l'annonce</button>
+{% if message is defined %}
+<p>{{ message }}</p>
+{% endif %}
+</form>
+</div>
+{% endblock %}

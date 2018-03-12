@@ -26,3 +26,27 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /{_locale}/profile
+
+create:
+    path:     /{_locale}/create
+    defaults: { _controller: '\AppBundle\Controller\RedirectController::createAction' }
+
+update:
+  path:     /{_locale}/update
+  defaults: { _controller: '\AppBundle\Controller\RedirectController::updateAction' }
+
+ajout:
+    path:     /{_locale}/ajout
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::ajoutAction' }
+
+lire:
+    path:     /{_locale}/read
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::readAction' }
+
+supprimer:
+    path:     /{_locale}/supprimer
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::supprimerAction' }
+
+modifier:
+    path:     /{_locale}/modifier
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::modifierAction' }
