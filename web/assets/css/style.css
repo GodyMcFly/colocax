@@ -32,6 +32,17 @@ body{
 .fos_user_registration_register{
 }
 
+.colocax{
+  display: flex;
+  text-transform: uppercase;
+  text-align: center !important;
+  align-items: center;
+}
+
+.colocax:hover{
+  text-transform: uppercase;
+}
+
 .title{
   color: white;
   text-transform: uppercase;
