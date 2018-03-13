@@ -20,7 +20,7 @@ annonces:
     supprimer: 'Delete ad'
     modifier: 'Edit ad'
     adresse: 'Address'
-    ville: 'Housing type'
+    ville: 'City'
     pieces: 'Number of pieces'
     surface: 'Area (in m²)'
     loyer: 'Rent (excluding charges)'

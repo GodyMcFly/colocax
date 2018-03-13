@@ -20,7 +20,7 @@ annonces:
     supprimer: 'Supprimer l''annonce'
     modifier: 'Modifier l''annonce'
     adresse: 'Adresse'
-    ville: 'Type de logement'
+    ville: 'Ville'
     pieces: 'Nombre de pièces'
     surface: 'Surface (en m²)'
     loyer: 'Loyer (HC)'
