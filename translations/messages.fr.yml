@@ -24,5 +24,6 @@ annonces:
     pieces: 'Nombre de pièces'
     surface: 'Surface (en m²)'
     loyer: 'Loyer (HC)'
-    charges: 'charges'
+    charges: 'Charges'
     ajouter: 'Ajouter'
+    type: 'Type de logement'

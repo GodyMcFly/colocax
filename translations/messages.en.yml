@@ -1,10 +1,29 @@
-login: Login
-sign_up: 'Sign up'
-slogan: 'Find the best ad or create it !'
-rechercher_ann: 'Search a roomate'
-creer_ann: 'Create an ad'
-inscription_title: 'Create a New Account'
-connexion_title: 'Log In'
-langue_fr: 'French'
-langue_en: 'English'
-logout: Logout
+nav:
+    slogan: 'Find the best ad or create it !'
+    rechercher_ann: 'Search a roomate'
+    creer_ann: 'Create an ad'
+    langue_fr: 'French'
+    langue_en: 'English'
+    logout: Logout
+    login: Login
+    sign_up: 'Sign up'
+
+user:
+    inscription_title: 'Create a New Account'
+    connexion_title: 'Log In'
+
+annonces:
+    liste: 'List of ads'
+    title: 'Title'
+    places: 'Number of places'
+    description: 'Description'
+    supprimer: 'Delete ad'
+    modifier: 'Edit ad'
+    adresse: 'Address'
+    ville: 'Housing type'
+    pieces: 'Number of pieces'
+    surface: 'Area (in m²)'
+    loyer: 'Rent (excluding charges)'
+    charges: 'Charges'
+    ajouter: 'Add'
+    type: 'Type'
