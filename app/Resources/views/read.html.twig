@@ -1,26 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-  <div class="div_center">
-
     <p class="text-center text-white"><h1 class="text-center text-white">{{'annonces.liste'|trans }}</h1></p>
 
   {% for annonce in annonces %}
-  <li>{{'annonces.title'|trans }} : {{ annonce.titre }}</li>
-  <p>{{'annonces.places'|trans }} : {{ annonce.places }}  </p>
-  <p> {{'annonces.description'|trans }} : {{ annonce.description }} </p>
+  <div class="card">
+      <h2>{{ annonce.titre }}</h2>
+      {{'annonces.places'|trans }} : {{ annonce.places }} </br>
+      {{'annonces.description'|trans }} : {{ annonce.description }}
 
-
-    <form action="{{ path('supprimer') }}" method="POST">
-  <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
-  <button type="submit" class="btn btn-dark" >{{'annonces.supprimer'|trans }}</button>
-  </form>
-    <form action="{{ path('update') }}" method="POST">
-    <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
-  <button  type="submit" class="btn btn-dark" >{{'annonces.modifier'|trans }}</button>
-</form>
-  <br />
-{% endfor %}
+    <div class="line"></div>
+    <div class="btn_center">
+      <div>
+      <form action="{{ path('update') }}" method="POST">
+        <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
+        <button  type="submit" class="btn2" >{{'annonces.modifier'|trans }}</button>
+      </form>
+      </div>
+      <div>
+      <form action="{{ path('supprimer') }}" method="POST">
+        <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
+        <button type="submit" class="btn_supprimer" >{{'annonces.supprimer'|trans }}</button>
+      </form>
+      </div>
+    </div>
   </div>
+{% endfor %}
 
 {% endblock %}
