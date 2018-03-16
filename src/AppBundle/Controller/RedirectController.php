@@ -30,7 +30,6 @@ class RedirectController extends Controller
       $annonce = $em->getReference('AppBundle:Annonce', $_POST['modifier']);
       $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
 
-
         return $this->render('/update.html.twig', array('titre' => $annonce->getTitre(),
         'places' => $annonce->getPlaces(), 'description' => $annonce->getDescription(),
         'adresse' => $location->getAdresse(), 'ville' => $location->getVille(),

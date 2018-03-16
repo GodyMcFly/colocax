@@ -27,3 +27,4 @@ annonces:
     charges: 'Charges'
     ajouter: 'Add'
     type: 'Type'
+    details: 'Show détails'

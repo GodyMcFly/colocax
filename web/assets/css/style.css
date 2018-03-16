@@ -1,7 +1,7 @@
 body{
   height: 100%;
-  background-image:linear-gradient(to right, #2b5876, #4e4376);
-  background-image:-moz-linear-gradient(left, #2b5876, #4e4376);
+  background-image:linear-gradient(to right, #f46b45, #eea849);
+  background-image:-moz-linear-gradient(left, #c, #eea849);
   padding: 25px;
 }
 
@@ -11,7 +11,7 @@ body{
 }
 
 .div_center{
-  width: 50%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -27,9 +27,6 @@ body{
   display: flex;
   text-align: right;
   justify-content: right;
-}
-
-.fos_user_registration_register{
 }
 
 .colocax{
@@ -51,7 +48,7 @@ body{
 .card{
   background-color: white;
   padding: 3%;
-  color: #2b5876;
+  color: grey;
   margin-top: 25px;
 }
 
@@ -70,7 +67,7 @@ body{
 .btn:hover{
   text-decoration: none;
   text-transform: none;
-  color: #2b5876;
+  color: #f46b45;
   background-color: white;
 }
 
@@ -83,13 +80,14 @@ body{
   margin: 5px;
   border-radius: 0px!important;
   border: 2px solid white!important;
-  background-color:  #2b4f76;
+  background-color:  #f46b45;
 }
 
 .btn2:hover{
   text-decoration: none;
   text-transform: none;
-  background-color: #517296;
+  cursor: pointer;
+  background-color: #f4ad9a;
 }
 
 .btn_supprimer{
@@ -123,19 +121,19 @@ body{
 .btn_langues:hover{
   text-decoration: none;
   text-transform: none;
-  color: #2b5876;
+  color: grey;
   background-color: white;
 }
 
 .btn_langues:active{
   text-decoration: none;
   text-transform: none;
-  color: #2b5876;
+  color: #f46b45;
   background-color: white;
 }
 
 .espace{
-  height: 150px;
+  height: 50px;
 }
 
 .line{
@@ -147,13 +145,12 @@ body{
 }
 
 .text-color{
-  color: #2b5876!important;
+  color: grey!important;
 }
 
-.nav-contour{
-  padding: 25px;
-  background-image:linear-gradient(to right, #2b5876, #4e4376);
-  background-image:-moz-linear-gradient(left, #2b5876, #4e4376);
+#trash{
+  width: 24px;
+  color: white;
 }
 
 #flag_icon{

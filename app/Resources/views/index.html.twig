@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="espace"></div>
     <p class="text-center text-white"><h1 class="text-center text-white">{{ 'nav.slogan'|trans }}</h1></p>
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <div class="btn_center">

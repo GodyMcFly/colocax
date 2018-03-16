@@ -2,85 +2,72 @@
 
 {% block body %}
 
-  <div class="div_center">
+<p class="text-center text-white"><h1 class="text-center text-white">{{'nav.creer_ann'|trans }}</h1></p>
 
-    <p class="text-center text-white"><h1 class="text-center text-white">{{'nav.creer_ann'|trans }}</h1></p>
+<div class="card">
 
 <form action= "{{ path('ajout') }}" method="POST">
-    <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default" >{{'annonces.title'|trans }}</span>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.title'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="titre">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.places'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="places">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.adresse'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="adresse">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.ville'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="ville">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.type'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="type">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.pieces'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nbrpieces">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.surface'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="surface">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.loyer'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="loyerhc">
+</div>
+
+<div class="form-group">
+   <label for="exampleFormControlInput1">{{'annonces.charges'|trans }}</label>
+   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="charges">
+</div>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">{{'annonces.description'|trans }}</label>
+    <textarea class="form-control" aria-label="With textarea" name="descr"></textarea>
+</div>
+
+</br>
+
+<div class="btn_center">
+  <div>
+  <button type="submit" class="btn2">{{'annonces.ajouter'|trans }}</button>
   </div>
-  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="titre">
 </div>
 
-
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default" >{{'annonces.places'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="places">
 </div>
 
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default" >{{'annonces.adresse'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="adresse">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default" >{{'annonces.ville'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="ville">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default">{{'annonces.type'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="type">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default">{{'annonces.pieces'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nbrpieces">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default">{{'annonces.surface'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="surface">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default">{{'annonces.loyer'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="loyerhc">
-</div>
-
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text" id="inputGroup-sizing-default">{{'annonces.charges'|trans }}</span>
-</div>
-<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="charges">
-</div>
-
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">{{'annonces.description'|trans }}</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea" name="descr"></textarea>
-</div>
-
-<button type="submit" class="btn btn-dark">{{'annonces.ajouter'|trans }}</button>
 {% if message is defined %}
 <p>{{ message }}</p>
 {% endif %}

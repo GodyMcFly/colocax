@@ -107,6 +107,22 @@ $result = $repository->findAll();
       return $this->render('/read.html.twig', array('annonces' => $result));
   }
 
+
+  /*
+  @Route("/details", name="details")
+  */
+  public function detailsAction(Request $request)
+  {
+    $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+    $em = $this->getDoctrine()->getManager();
+    $annonce = $em->getReference('AppBundle:Annonce', $_POST['details']);
+    $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
+
+
+    $result = $repository->findAll();
+      return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location));
+  }
+
 }
 
 ?>

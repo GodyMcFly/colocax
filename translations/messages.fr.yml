@@ -27,3 +27,4 @@ annonces:
     charges: 'Charges'
     ajouter: 'Ajouter'
     type: 'Type de logement'
+    details: 'Afficher les détails'
