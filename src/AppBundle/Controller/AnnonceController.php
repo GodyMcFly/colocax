@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use AppBundle\Entity\Location;
+use AppBundle\Entity\User;
 use AppBundle\Entity\Annonce;
 
 class AnnonceController extends Controller {
@@ -40,7 +41,7 @@ class AnnonceController extends Controller {
           $annonce->setPlaces($_POST['places']);
           $annonce->setIdLogement($location->getIdLogement());
           $annonce->setDescription($_POST['descr']);
-          $annonce->setIdUser(1);
+          $annonce->setIdUser($id = $user = $this->getUser()->getId());
           $em->persist($annonce);
           $em->flush();
 
@@ -57,10 +58,11 @@ class AnnonceController extends Controller {
   public function readAction(Request $request)
   {
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+    $id = $user = $this->getUser()->getId();
 
 
 $result = $repository->findAll();
-      return $this->render('/read.html.twig', array('annonces' => $result));
+      return $this->render('/read.html.twig', array('annonces' => $result, 'id' => $id));
   }
 
   /*

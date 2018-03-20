@@ -7,6 +7,7 @@ nav:
     logout: 'Se déconnecter'
     login: 'Se connecter'
     sign_up: 'S''inscrire'
+    moncompte: 'Mon compte'
 
 user:
     inscription_title: 'Créer un compte'
@@ -28,3 +29,10 @@ annonces:
     ajouter: 'Ajouter'
     type: 'Type de logement'
     details: 'Afficher les détails'
+
+account:
+    modifier_infos: 'Modifier les informations du compte'
+    modifier_mdp: 'Modifier le mot de passe'
+    identifiant: 'Identifiant'
+    email: 'Adresse e-mail'
+    gerer_annonces: "Gérer mes annonces"

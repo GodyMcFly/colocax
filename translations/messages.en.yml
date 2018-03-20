@@ -7,6 +7,7 @@ nav:
     logout: Logout
     login: Login
     sign_up: 'Sign up'
+    moncompte: 'My account'
 
 user:
     inscription_title: 'Create a New Account'
@@ -28,3 +29,10 @@ annonces:
     ajouter: 'Add'
     type: 'Type'
     details: 'Show détails'
+
+account:
+    modifier_infos: "Change my informations account"
+    modifier_mdp: "Change my password"
+    identifiant: 'Id'
+    email: 'Mail'
+    gerer_annonces: "Manage my ads"

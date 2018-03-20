@@ -3,3 +3,10 @@
 {% block fos_user_content %}
 {% include "@FOSUser/Profile/show_content.html.twig" %}
 {% endblock fos_user_content %}
+{% block btn %}
+<div class="btn_center">
+  <a href="#" class="btn2">{{ 'account.gerer_annonces'|trans }}</a>
+  <a href="{{ path('fos_user_profile_edit') }}" class="btn2">{{ 'account.modifier_infos'|trans }}</a>
+  <a href="{{ path('fos_user_change_password') }}" class="btn2">{{ 'account.modifier_mdp'|trans }}</a>
+</div>
+{% endblock btn %}

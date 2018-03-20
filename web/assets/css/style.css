@@ -75,7 +75,7 @@ body{
   display: flex;
   text-decoration: none;
   text-transform: none;
-  color: white;
+  color: white !important;
   padding: 10px;
   margin: 5px;
   border-radius: 0px!important;
@@ -87,6 +87,7 @@ body{
   text-decoration: none;
   text-transform: none;
   cursor: pointer;
+  color: white !important;
   background-color: #f4ad9a;
 }
 
@@ -157,4 +158,10 @@ body{
   height: 17px;
   float: left;
   padding-right: 5px;
+}
+
+.messages{
+  color: orange;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
