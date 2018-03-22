@@ -60,12 +60,14 @@ class AnnonceController extends Controller {
   public function readAction(Request $request)
   {
     $em = $this->getDoctrine()->getManager();
-    $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+    $annonces = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+    $locations = $this->getDoctrine()->getManager()->getRepository('AppBundle:Location');
     $id = $user = $this->getUser()->getId();
 
 
-    $result = $repository->findAll();
-      return $this->render('/read.html.twig', array('annonces' => $result, 'id' => $id));
+    $ann = $annonces->findAll();
+    $loc = $locations->findAll();
+      return $this->render('/read.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id));
   }
 
   /*

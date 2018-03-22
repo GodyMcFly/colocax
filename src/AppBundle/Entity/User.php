@@ -23,7 +23,7 @@ class User extends BaseUser
     * @ORM\Column(name="css", type="string")
      * @var string
      */
-    protected $css = "style.css";
+    protected $css = "style";
 
     public function __construct()
     {
@@ -36,7 +36,7 @@ class User extends BaseUser
     }
 
     public function getCss(){
-      return $this->id;
+      return $this->css;
     }
 
     public function setCss($leCss){

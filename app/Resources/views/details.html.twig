@@ -4,14 +4,16 @@
 
   <p class="text-center text-white"><h1 class="text-center text-white">{{ annonce.titre }}</h1></p>
   <div class="card">
-      {{'annonces.places'|trans }} : {{ annonce.places }} </br>
-      {{'annonces.adresse'|trans }} : {{ location.adresse }} </br>
-      {{'annonces.ville'|trans }} : {{ location.ville }} </br>
-      {{'annonces.type'|trans }} : {{ location.type }} </br>
-      {{'annonces.pieces'|trans }} : {{ location.nbrpieces }} </br>
-      {{'annonces.loyer'|trans }} : {{ location.loyerhc }} </br>
-      {{'annonces.charges'|trans }} : {{ location.charges }} </br>
-      {{'annonces.description'|trans }} : {{ annonce.description }}
+    <div class="info">
+      <span id="libelle">{{'annonces.places'|trans }} :</span> {{ annonce.places }} </br>
+      <span id="libelle">{{'annonces.adresse'|trans }} :</span> {{ location.adresse }} </br>
+      <span id="libelle">{{'annonces.ville'|trans }} :</span> {{ location.ville }} </br>
+      <span id="libelle">{{'annonces.type'|trans }} :</span> {{ location.type }} </br>
+      <span id="libelle">{{'annonces.pieces'|trans }} :</span> {{ location.nbrpieces }} </br>
+      <span id="libelle">{{'annonces.loyer'|trans }} :</span> {{ location.loyerhc }} </br>
+      <span id="libelle">{{'annonces.charges'|trans }} : </span>{{ location.charges }} </br>
+      <span id="libelle">{{'annonces.description'|trans }} : </span>{{ annonce.description }}
+      </div>
 
     <div class="line"></div>
 

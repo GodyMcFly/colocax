@@ -3,39 +3,39 @@
 {% block body %}
     <p class="text-center text-white"><h1 class="text-center text-white">{{'annonces.liste'|trans }}</h1></p>
 
-  {% for annonce in annonces %}
-  <div class="card">
-      <h2>{{ annonce.titre }}</h2>
-      <div class="date">{{ annonce.dateCreation }}</div></br>
-      <div class="infos">
-        <span id="libelle">{{'annonces.places'|trans }} :</span> {{ annonce.places }} </br>
-        <span id="libelle">{{'annonces.description'|trans }}</span> : {{ annonce.description }}
-      </div>
+  {% for annonce in annonces | reverse %}
+      <div class="card">
+          <h2>{{ annonce.titre }}</h2>
+          <div class="date">{{ annonce.dateCreation }}</div></br>
+          <div class="infos">
+            <span id="libelle">{{'annonces.places'|trans }} :</span> {{ annonce.places }} </br>
+            <span id="libelle">{{'annonces.description'|trans }}</span> : {{ annonce.description }}
+          </div>
 
-    <div class="line"></div>
-    <div class="btn_center">
-      <div>
-      <form action="{{ path('details') }}" method="POST">
-        <input type="hidden" name="details" value={{ annonce.idAnnonce }} />
-        <button type="submit" class="btn2" >{{'annonces.details'|trans }}</button>
-      </form>
-      </div>
-      {% if annonce.idUser == id %}
-        <div>
-        <form action="{{ path('update') }}" method="POST">
-          <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
-          <button  type="submit" class="btn2" >{{'annonces.modifier'|trans }}</button>
-        </form>
+        <div class="line"></div>
+        <div class="btn_center">
+          <div>
+          <form action="{{ path('details') }}" method="POST">
+            <input type="hidden" name="details" value={{ annonce.idAnnonce }} />
+            <button type="submit" class="btn2" >{{'annonces.details'|trans }}</button>
+          </form>
+          </div>
+          {% if annonce.idUser == id %}
+            <div>
+            <form action="{{ path('update') }}" method="POST">
+              <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
+              <button  type="submit" class="btn2" >{{'annonces.modifier'|trans }}</button>
+            </form>
+            </div>
+          {% endif %}
+          <div>
+          <form action="{{ path('supprimer') }}" method="POST">
+            <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
+            <button type="submit" class="btn_supprimer" ><img id="trash" src="{{ asset('assets/images/trash.png') }}"/></button>
+          </form>
+          </div>
         </div>
-      {% endif %}
-      <div>
-      <form action="{{ path('supprimer') }}" method="POST">
-        <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
-        <button type="submit" class="btn_supprimer" ><img id="trash" src="{{ asset('assets/images/trash.png') }}"/></button>
-      </form>
       </div>
-    </div>
-  </div>
 {% endfor %}
 
 {% endblock %}

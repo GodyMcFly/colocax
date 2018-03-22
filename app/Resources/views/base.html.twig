@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Trouver une colocation{% endblock %}</title>
-        {% block stylesheets %}
+      <meta charset="UTF-8" />
+      <title>{% block title %}Trouver une colocation{% endblock %}</title>
+      {% block stylesheets %}
+      {% if app.user != null %}
+      {{app.user.css}}
+        <link rel="stylesheet" href="{{ asset('assets/css/' ~ app.user.css ~ '.css') }}" />
+      {% else %}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+      {% endif %}
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      {% endblock %}
+      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+
     <body>
       <div class="gradient_blue">
-      <div class="nav-contour fixed-top">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="colocax">
-      <a class="navbar-brand text-color" href="{{ path('homepage') }}">Colocax</a>
+        <div class="nav-contour fixed-top">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="colocax">
+            <a class="navbar-brand text-color" href="{{ path('homepage') }}">Colocax</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  <li class="nav-item">
+                    <a href="{{ path('lire') }}" class="nav-link">{{ 'nav.rechercher_ann'|trans }}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ path('create') }}" class="nav-link">{{ 'nav.creer_ann'|trans }}</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('fos_user_profile_show') }}">{{'nav.moncompte'|trans }}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'nav.logout'|trans }}</a>
+                  </li>
+                </ul>
+                {% else %}
+                  </ul>
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'nav.login'|trans }}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'nav.sign_up'|trans }}</a>
+                      </li>
+                    </ul>
+                {% endif %}
+            </div>
+          </nav>
+        <div class="btn_langues_right">
+          <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
+          <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
       </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-              <li class="nav-item">
-                <a href="{{ path('lire') }}" class="nav-link">{{ 'nav.rechercher_ann'|trans }}</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ path('create') }}" class="nav-link">{{ 'nav.creer_ann'|trans }}</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_profile_show') }}">{{'nav.moncompte'|trans }}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'nav.logout'|trans }}</a>
-              </li>
-            </ul>
-            {% else %}
-          </ul>
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'nav.login'|trans }}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'nav.sign_up'|trans }}</a>
-              </li>
-            </ul>
-            {% endif %}
-        </div>
-      </nav>
-    <div class="btn_langues_right">
-      <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
-      <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
-  </div>
-  </div>
-      <div class="div_center">
-      <div class="espace"></div>
+    </div>
+        <div class="div_center">
+        <div class="espace"></div>
 
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-        {% endblock %}
+          {% block body %}{% endblock %}
+          {% block javascripts %}
+          {% endblock %}
+          </div>
         </div>
-      </div>
       </div>
     </body>
 </html>

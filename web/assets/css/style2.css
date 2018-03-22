@@ -1,0 +1,187 @@
+body{
+  height: 100%;
+  background-color: #212121!important;
+  padding: 25px;
+}
+
+.gradient_blue{
+  width: 100%;
+  min-height: 100%;
+}
+
+.div_center{
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.btn_center{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn_langues_right{
+  display: flex;
+  text-align: right;
+  justify-content: right;
+}
+
+.colocax{
+  display: flex;
+  text-transform: uppercase;
+  text-align: center !important;
+  align-items: center;
+}
+
+.colocax:hover{
+  text-transform: uppercase;
+}
+
+.title{
+  color: white;
+  text-transform: uppercase;
+}
+
+.card{
+  background-color: white;
+  padding: 3%;
+  color: grey;
+  margin-top: 25px;
+}
+
+.btn{
+  display: flex;
+  font-size: 32px!important;
+  text-decoration: none;
+  text-transform: none;
+  color: white;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 0px!important;
+  border: 2px solid white!important;
+}
+
+.btn:hover{
+  text-decoration: none;
+  text-transform: none;
+  color: #212121;
+  background-color: white;
+}
+
+.btn2{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color: white !important;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 0px!important;
+  border: 2px solid white!important;
+  background-color:  #212121;
+}
+
+.btn2:hover{
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  color: white !important;
+  background-color: #9E9E9E;
+}
+
+.btn_supprimer{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 0px!important;
+  border: 2px solid white!important;
+  background-color: #7f2a2a;
+}
+
+.btn_supprimer:hover{
+  text-decoration: none;
+  text-transform: none;
+  background-color: #a86363;
+  cursor: pointer;
+}
+
+.btn_langues{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color: white;
+  padding: 10px;
+  border-radius: 0px!important;
+  line-height: 15px;
+}
+
+.btn_langues:hover{
+  text-decoration: none;
+  text-transform: none;
+  color: grey;
+  background-color: white;
+}
+
+.btn_langues:active{
+  text-decoration: none;
+  text-transform: none;
+  color: #f46b45;
+  background-color: white;
+}
+
+.espace{
+  height: 50px;
+}
+
+.line{
+  background-color: lightgrey;
+  width: 100%;
+  height: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.text-color{
+  color: grey!important;
+}
+
+#trash{
+  width: 24px;
+  color: white;
+}
+
+#trash:hover{
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+#flag_icon{
+  height: 17px;
+  float: left;
+  padding-right: 5px;
+}
+
+.messages{
+  color: orange;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.date{
+  font-size: 14px;
+  color: lightgrey;
+  margin-bottom: 10px;
+}
+
+#libelle{
+  font-weight: 600;
+}
+
+.infos{
+  font-size: 18px;
+}
