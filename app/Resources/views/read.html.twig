@@ -6,9 +6,11 @@
   {% for annonce in annonces %}
   <div class="card">
       <h2>{{ annonce.titre }}</h2>
-      {{'annonces.places'|trans }} : {{ annonce.places }} </br>
-      {{'annonces.description'|trans }} : {{ annonce.description }}
-      {{ annonce.idUser }}" + "{{id}}
+      <div class="date">{{ annonce.dateCreation }}</div></br>
+      <div class="infos">
+        <span id="libelle">{{'annonces.places'|trans }} :</span> {{ annonce.places }} </br>
+        <span id="libelle">{{'annonces.description'|trans }}</span> : {{ annonce.description }}
+      </div>
 
     <div class="line"></div>
     <div class="btn_center">

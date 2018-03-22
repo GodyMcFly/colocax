@@ -16,7 +16,7 @@ user:
 annonces:
     liste: 'Liste des annonces'
     title: 'Titre'
-    places: 'Nombre de places'
+    places: 'Nombre de colocataires maximum'
     description: 'Description'
     supprimer: 'Supprimer l''annonce'
     modifier: 'Modifier l''annonce'

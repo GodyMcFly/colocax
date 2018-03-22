@@ -4,6 +4,13 @@
 {% include "@FOSUser/Profile/show_content.html.twig" %}
 {% endblock fos_user_content %}
 {% block btn %}
+<form action="{{ path("template") }}" method="post">
+  <select name="template">
+    <option value="style">Orange</option>
+    <option value="style2">Dark</option>
+  </select>
+  <input type="submit" value="Enregistrer">
+</form>
 <div class="btn_center">
   <a href="#" class="btn2">{{ 'account.gerer_annonces'|trans }}</a>
   <a href="{{ path('fos_user_profile_edit') }}" class="btn2">{{ 'account.modifier_infos'|trans }}</a>

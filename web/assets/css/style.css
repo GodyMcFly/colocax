@@ -154,6 +154,12 @@ body{
   color: white;
 }
 
+#trash{
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
 #flag_icon{
   height: 17px;
   float: left;
@@ -164,4 +170,18 @@ body{
   color: orange;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.date{
+  font-size: 14px;
+  color: lightgrey;
+  margin-bottom: 10px;
+}
+
+#libelle{
+  font-weight: 600;
+}
+
+.infos{
+  font-size: 18px;
 }

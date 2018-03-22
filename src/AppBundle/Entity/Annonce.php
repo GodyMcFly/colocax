@@ -51,6 +51,12 @@ class Annonce
      */
     private $description;
 
+    /**
+    * @ORM\Column(name="dateCreation", type="string")
+     * @var string
+     */
+    private $dateCreation;
+
 
     /**
      * Get id
@@ -204,5 +210,28 @@ class Annonce
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Get dateCreation
+     *
+     * @return string
+     */
+    public function getDateCreation()
+    {
+        return $this->dateCreation;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $dateCreation
+     *
+     * @return Annonce
+     */
+    public function setDateCreation($date)
+    {
+      $this->dateCreation = $date;
+      return $this;
     }
 }
