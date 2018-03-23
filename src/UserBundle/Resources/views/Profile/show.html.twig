@@ -1,19 +1,27 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
+<h2>Mes annonces</h2>
+<div class="btn_left">
+  <a href="#" class="btn2">{{ 'account.gerer_annonces'|trans }}</a>
+</div>
+<div class="line"></div>
+<h2>Mon informations personnelles</h2>
 {% include "@FOSUser/Profile/show_content.html.twig" %}
 {% endblock fos_user_content %}
 {% block btn %}
-<form action="{{ path("template") }}" method="post">
-  <select name="template">
-    <option value="style">Orange</option>
-    <option value="style2">Dark</option>
-  </select>
-  <input type="submit" value="Enregistrer">
-</form>
-<div class="btn_center">
-  <a href="#" class="btn2">{{ 'account.gerer_annonces'|trans }}</a>
+<div class="btn_left">
   <a href="{{ path('fos_user_profile_edit') }}" class="btn2">{{ 'account.modifier_infos'|trans }}</a>
   <a href="{{ path('fos_user_change_password') }}" class="btn2">{{ 'account.modifier_mdp'|trans }}</a>
 </div>
+<div class="line"></div>
+<h2>Personnalisation</h2>
+<form action="{{ path("template") }}" method="post">
+<label for="exampleFormControlSelect1">Thème </label>
+  <select class="form-control" id="exampleFormControlSelect1" name="template">
+    <option value="style">Orange</option>
+    <option value="style2">Dark</option>
+  </select>
+  <input class="btn2" type="submit" value="Enregistrer">
+</form>
 {% endblock btn %}

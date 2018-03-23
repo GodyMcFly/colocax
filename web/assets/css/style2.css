@@ -76,7 +76,9 @@ body{
   text-transform: none;
   color: white !important;
   padding: 10px;
-  margin: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 0px!important;
   border: 2px solid white!important;
   background-color:  #212121;
