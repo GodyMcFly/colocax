@@ -71,6 +71,22 @@ class AnnonceController extends Controller {
   }
 
   /*
+  @Route("/annonces", name="annonces")
+  */
+  public function annoncesAction(Request $request)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $annonces = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+    $locations = $this->getDoctrine()->getManager()->getRepository('AppBundle:Location');
+    $id = $user = $this->getUser()->getId();
+
+
+    $ann = $annonces->findAll();
+    $loc = $locations->findAll();
+      return $this->render('/gestion.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id));
+  }
+
+  /*
   @Route("/supprimer", name="supprimer")
   */
   public function supprimerAction(Request $request)
@@ -130,6 +146,39 @@ $result = $repository->findAll();
       return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location));
   }
 
+  /*
+  @Route("/search", name="search")
+  */
+  public function searchAction(Request $request)
+    {
+
+        $annonces = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
+        $locations = $this->getDoctrine()->getManager()->getRepository('AppBundle:Location');
+        $id = $user = $this->getUser()->getId();
+        $ann = $annonces->findAll();
+        $loc = $locations->findAll();
+
+
+        if( isset($_POST["search"])){
+            $em = $this->getDoctrine()->getManager();
+            $mot = addcslashes($_POST['recherche'], '\'%_"/');
+            if($mot == ''){
+                return $this->redirectToRoute("lire");
+            }
+
+            $ann = $em->getRepository('AppBundle:Annonce')
+                          ->research($mot);
+
+            if (!$annonces) {
+                return $this->render('/read.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id)
+                );
+            }
+
+                return $this->render('/read.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id)
+              );
+        }
+    return $this->redirectToRoute('lire');
+  }
 }
 
 ?>

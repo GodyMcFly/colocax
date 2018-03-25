@@ -29,6 +29,8 @@ annonces:
     ajouter: 'Add'
     type: 'Type'
     details: 'Show détails'
+    annonces: "My roomates"
+    rechercher: "Search"
 
 account:
     modifier_infos: "Change my informations account"

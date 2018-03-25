@@ -29,6 +29,8 @@ annonces:
     ajouter: 'Ajouter'
     type: 'Type de logement'
     details: 'Afficher les détails'
+    annonces: "Mes annonces"
+    rechercher: "Rechercher"
 
 account:
     modifier_infos: 'Modifier les informations du compte'

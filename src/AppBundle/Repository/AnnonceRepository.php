@@ -10,4 +10,19 @@ namespace AppBundle\Repository;
  */
 class AnnonceRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  public function research($mot){
+    if(is_string($mot)){
+      return $this->createQueryBuilder('a')
+                      ->where('a.description LIKE ?1')
+                      ->orwhere('a.description LIKE ?2')
+                      ->orwhere('a.description LIKE ?3')
+                      ->setParameter(1, '% '.$mot.' %')
+                      ->setParameter(2, $mot.' %')
+                      ->setParameter(3, $mot)
+                      ->getQuery()
+                      ->execute();
+    }
+  }
+
 }

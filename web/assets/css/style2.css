@@ -92,6 +92,28 @@ body{
   background-color: #9E9E9E;
 }
 
+.btn3{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color: grey !important;
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0px!important;
+  border: 0px solid white!important;
+  background-color:  white;
+}
+
+.btn3:hover{
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  color: grey !important;
+  background-color: lightgrey;
+}
+
 .btn_supprimer{
   display: flex;
   text-decoration: none;

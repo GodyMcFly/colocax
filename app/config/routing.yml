@@ -54,3 +54,11 @@ modifier:
 details:
     path:     /{_locale}/details
     defaults: { _controller: '\AppBundle\Controller\AnnonceController::detailsAction' }
+
+search:
+    path:     /{_locale}/search
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::searchAction' }
+
+annonces:
+    path:     /{_locale}/annonces
+    defaults: { _controller: '\AppBundle\Controller\AnnonceController::annoncesAction' }
