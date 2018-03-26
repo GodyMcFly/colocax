@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center text-white">{{'annonces.liste'|trans }}</h1>
+    <p class="text-center text-white"><h1 class="text-center text-white">{{'annonces.annonces'|trans }}</h1></p>
 
     <div class="btn_center">
-        <form action="{{ path('search') }}" method="POST" class="form-inline">
-          <input name="recherche" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button name="search" class="btn3" type="submit">{{'annonces.rechercher'|trans }}</button>
+        <form class="form-inline">
+          <input name="description" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn3" type="submit">{{'annonces.rechercher'|trans }}</button>
           </form>
     </div>
 
   {% for annonce in annonces | reverse %}
+    {% if annonce.idUser == id %}
       <div class="card">
           <h2>{{ annonce.titre }}</h2>
           <div class="date">{{ annonce.dateCreation }}</div></br>
@@ -27,22 +28,21 @@
             <button type="submit" class="btn2" >{{'annonces.details'|trans }}</button>
           </form>
           </div>
-          {% if annonce.idUser == id %}
             <div>
             <form action="{{ path('update') }}" method="POST">
               <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />
               <button  type="submit" class="btn2" >{{'annonces.modifier'|trans }}</button>
             </form>
             </div>
-            <div>
-            <form action="{{ path('supprimer') }}" method="POST">
-              <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
-              <button type="submit" class="btn_supprimer" ><img id="trash" src="{{ asset('assets/images/trash.png') }}"/></button>
-            </form>
-            </div>
-          {% endif %}
+          <div>
+          <form action="{{ path('supprimer') }}" method="POST">
+            <input type="hidden" name="supprimer" value={{ annonce.idAnnonce }} />
+            <button type="submit" class="btn_supprimer" ><img id="trash" src="{{ asset('assets/images/trash.png') }}"/></button>
+          </form>
+          </div>
         </div>
       </div>
+    {% endif %}
 {% endfor %}
 
 {% endblock %}

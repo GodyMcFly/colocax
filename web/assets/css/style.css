@@ -1,7 +1,7 @@
 body{
   height: 100%;
-  background-image:linear-gradient(to right, #f46b45, #eea849);
-  background-image:-moz-linear-gradient(left, #c, #eea849);
+ background-image:linear-gradient(to right, #f46b45, #eea849);
+  background-image:-moz-linear-gradient(left, #f46b45, #eea849);
   padding: 25px;
 }
 
@@ -86,7 +86,7 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0px!important;
-  border: 2px solid white!important;
+  border: 0px solid white!important;
   background-color:  #f46b45;
 }
 
@@ -96,6 +96,28 @@ body{
   cursor: pointer;
   color: white !important;
   background-color: #f4ad9a;
+}
+
+.btn3{
+  display: flex;
+  text-decoration: none;
+  text-transform: none;
+  color:#f46b45 !important;
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0px!important;
+  border: 0px solid white!important;
+  background-color:  white;
+}
+
+.btn3:hover{
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  color: white !important;
+  background-color: lightgrey;
 }
 
 .btn_supprimer{
@@ -108,7 +130,7 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0px!important;
-  border: 2px solid white!important;
+  border: 0px solid white!important;
   background-color: #7f2a2a;
 }
 
@@ -116,6 +138,7 @@ body{
   text-decoration: none;
   text-transform: none;
   background-color: #a86363;
+  cursor: pointer;
 }
 
 .btn_langues{
