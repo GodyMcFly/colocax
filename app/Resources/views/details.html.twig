@@ -21,9 +21,10 @@
       <span id="libelle">{{'user.annonceur'|trans }} :</span> {{ user.username }} </br>
       <span id="libelle">{{'user.mail'|trans }} :</span> {{ user.email }} </br>
 
+</div>
+    {% if annonce.idUser == id or is_granted("ROLE_ADMIN") %}
     <div class="line"></div>
 
-    </div>
 
     <div class="btn_center">
       <div>
@@ -39,6 +40,7 @@
       </form>
       </div>
     </div>
+    {% endif %}
   </div>
 
 {% endblock %}

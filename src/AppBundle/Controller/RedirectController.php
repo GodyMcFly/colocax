@@ -16,7 +16,10 @@ class RedirectController extends Controller
     */
     public function createAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("create"));
+        $breadcrumbs->addItem("Créer une annonce");
+
         return $this->render('/create.html.twig');
     }
 
@@ -25,6 +28,11 @@ class RedirectController extends Controller
     */
     public function updateAction(Request $request)
     {
+
+      $breadcrumbs = $this->get("white_october_breadcrumbs");
+      $breadcrumbs->addItem("Home", $this->get("router")->generate("modifier"));
+      $breadcrumbs->addItem("Annonces");
+      $breadcrumbs->addItem("Modifier une annonce");
 
       $em = $this->getDoctrine()->getManager();
       $annonce = $em->getReference('AppBundle:Annonce', $_POST['modifier']);

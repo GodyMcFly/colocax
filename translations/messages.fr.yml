@@ -35,6 +35,7 @@ annonces:
     details: 'Afficher les détails'
     annonces: "Mes annonces"
     rechercher: "Rechercher"
+    exemple: "Appartement, maison, Nantes.."
 
 account:
     modifier_infos: 'Modifier les informations du compte'

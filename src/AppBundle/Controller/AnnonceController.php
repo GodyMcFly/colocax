@@ -12,10 +12,16 @@ class AnnonceController extends Controller {
   */
   public function ajoutAction(Request $request)
   {
-    if(!isset($_POST['titre']) || !isset($_POST['places']) || !isset($_POST['adresse']) ||
-    !isset($_POST['ville']) ||!isset($_POST['type']) || !isset($_POST['nbrpieces'])
-    || !isset($_POST['surface']) || !isset($_POST['loyerhc'])
-    || !isset($_POST['charges'])){
+    if( !(isset($_POST['titre']))
+     || !(isset($_POST['places']))
+     || !(isset($_POST['adresse']))
+     || !(isset($_POST['ville']))
+     || !(isset($_POST['type']))
+     || !(isset($_POST['nbrpieces']))
+     || !(isset($_POST['surface']))
+     || !(isset($_POST['loyerhc']))
+     || !(isset($_POST['charges']))){
+
       return $this->render('/create.html.twig', array('message' => 'Veuillez remplir correctement le formulaire.'));
     }
     else {
@@ -40,9 +46,13 @@ class AnnonceController extends Controller {
       $annonce->setIdUser($id = $user = $this->getUser()->getId());
       $em->persist($annonce);
       $em->flush();
-      return $this->render('/create.html.twig', array('message' => 'Annonce correctement ajoutée.'));
+
+      $response = $this->forward('AppBundle\Controller\AnnonceController::readAction');
+      return $response;
     }
+
   }
+
   /*
   @Route("/lire", name="lire")
   */
@@ -54,6 +64,11 @@ class AnnonceController extends Controller {
     $id = $user = $this->getUser()->getId();
     $ann = $annonces->findAll();
     $loc = $locations->findAll();
+
+    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs->addItem("Home", $this->get("router")->generate("lire"));
+    $breadcrumbs->addItem("Annonces");
+
     return $this->render('/read.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id));
   }
   /*
@@ -67,6 +82,12 @@ class AnnonceController extends Controller {
     $id = $user = $this->getUser()->getId();
     $ann = $annonces->findAll();
     $loc = $locations->findAll();
+
+    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs->addItem("Home", $this->get("router")->generate("annonces"));
+    $breadcrumbs->addItem("Mon compte");
+    $breadcrumbs->addItem("Mes annonces");
+
     return $this->render('/gestion.html.twig', array('annonces' => $ann, 'locations' => $loc, 'id' => $id));
   }
   /*
@@ -112,10 +133,18 @@ class AnnonceController extends Controller {
   {
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
     $em = $this->getDoctrine()->getManager();
+    $id = $user = $this->getUser()->getId();
     $annonce = $em->getReference('AppBundle:Annonce', $_POST['details']);
     $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
+    $user = $this->getUser();
     $result = $repository->findAll();
-    return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location));
+
+    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs->addItem("Home", $this->get("router")->generate("annonces"));
+    $breadcrumbs->addItem("Annonces");
+    $breadcrumbs->addItem("Mes annonces");
+
+    return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location, 'user' => $user, 'id' => $id));
   }
   /*
   @Route("/search", name="search")

@@ -5,7 +5,7 @@
 
     <div class="btn_center">
         <form action="{{ path('search') }}" method="POST" class="form-inline">
-          <input name="recherche" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <input name="recherche" class="form-control mr-sm-2 input" type="search" placeholder="{{ 'annonces.exemple'|trans }}" aria-label="Search">
           <button name="search" class="btn3" type="submit">{{'annonces.rechercher'|trans }}</button>
           </form>
     </div>
@@ -27,7 +27,7 @@
             <button type="submit" class="btn2" >{{'annonces.details'|trans }}</button>
           </form>
           </div>
-          {% if annonce.idUser == id %}
+          {% if annonce.idUser == id or is_granted("ROLE_ADMIN") %}
             <div>
             <form action="{{ path('update') }}" method="POST">
               <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />

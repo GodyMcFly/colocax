@@ -19,7 +19,10 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->flush();
 
-        // replace this example code with whatever you need
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("fos_user_profile_show"));
+        $breadcrumbs->addItem("Mon compte");
+
         return $this->render('@FOSUser/Profile/show.html.twig', array(
             'user' => $user,
           ));
