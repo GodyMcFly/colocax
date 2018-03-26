@@ -1,7 +1,7 @@
 body{
   height: 100%;
-  background-image:linear-gradient(to right, #f46b45, #eea849);
-  background-image:-moz-linear-gradient(left, #c, #eea849);
+ background-image:linear-gradient(to right, #f46b45, #eea849);
+  background-image:-moz-linear-gradient(left, #f46b45, #eea849);
   padding: 25px;
 }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Colocax</title>
+    <link></link>
+    <description>Site d'annonces de colocations</description>
+    {% for annonce in listAnnonces %}
+      <item>
+        <title>{{ annonce.titre }}</titre>
+        <link></link>
+        <description>{{ annonce.description }}</description>
+      <item>
+  </channel>
+</rss>
