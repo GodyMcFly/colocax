@@ -1,6 +1,6 @@
 body{
   height: 100%;
-  background-color: #212121!important;
+  background-color: #424242!important;
   padding: 25px;
 }
 
@@ -14,6 +14,11 @@ body{
   margin-left: auto;
   margin-right: auto;
   align-items: center;
+}
+
+.btn_left{
+  display: flex;
+  justify-content: left;
 }
 
 .btn_center{
@@ -81,7 +86,7 @@ body{
   margin-bottom: 10px;
   border-radius: 0px!important;
   border: 2px solid white!important;
-  background-color:  #212121;
+  background-color:  #424242;
 }
 
 .btn2:hover{
@@ -98,7 +103,9 @@ body{
   text-transform: none;
   color: white;
   padding: 10px;
-  margin: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 0px!important;
   border: 2px solid white!important;
   background-color: #7f2a2a;
@@ -154,6 +161,9 @@ body{
 #trash{
   width: 24px;
   color: white;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
 }
 
 #trash:hover{

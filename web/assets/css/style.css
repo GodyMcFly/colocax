@@ -161,9 +161,12 @@ body{
 #trash{
   width: 24px;
   color: white;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
 }
 
-#trash{
+#trash:hover{
   text-decoration: none;
   text-transform: none;
   cursor: pointer;

@@ -12,6 +12,10 @@ nav:
 user:
     inscription_title: 'Créer un compte'
     connexion_title: 'Connexion'
+    contact: 'Contact'
+    annonceur: 'Annonceur'
+    mail: 'Mail'
+
 
 annonces:
     liste: 'Liste des annonces'

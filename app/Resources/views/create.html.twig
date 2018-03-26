@@ -2,11 +2,11 @@
 
 {% block body %}
 
-<p class="text-center text-white"><h1 class="text-center text-white">{{'nav.creer_ann'|trans }}</h1></p>
+<h1 class="text-center text-white">{{'nav.creer_ann'|trans }}</h1>
 
 <div class="card">
 
-<form action= "{{ path('lire') }}" method="POST">
+<form action= "{{ path('ajout') }}" method="POST">
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.title'|trans }}</label>

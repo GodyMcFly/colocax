@@ -48,7 +48,7 @@ class AnnonceController extends Controller {
           $em->flush();
 
 
-          return $this->render('/create.html.twig', array('message' => 'Annonce correctement ajoutée.'));
+          return $this->render('/create.html.twig');
 
       }
 
@@ -124,10 +124,11 @@ $result = $repository->findAll();
     $em = $this->getDoctrine()->getManager();
     $annonce = $em->getReference('AppBundle:Annonce', $_POST['details']);
     $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
+    $user = $em->getReference('AppBundle:User', $annonce->getIdUser());
 
 
     $result = $repository->findAll();
-      return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location));
+      return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location, 'user' => $user));
   }
 
 }

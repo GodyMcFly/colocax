@@ -25,6 +25,12 @@ class User extends BaseUser
      */
     protected $css = "style";
 
+    /**
+    * @ORM\Column(name="tel", type="string")
+     * @var string
+     */
+    protected $tel;
+
     public function __construct()
     {
         parent::__construct();
@@ -42,6 +48,15 @@ class User extends BaseUser
     public function setCss($leCss){
       $this->css = $leCss;
 
+      return $this;
+    }
+
+    public function getTel(){
+      return $this->tel;
+    }
+
+    public function setTel($leTel){
+      $this->tel = $leTel;
       return $this;
     }
 }

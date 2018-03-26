@@ -2,8 +2,8 @@
 
 {% block body %}
 
-  <p class="text-center text-white"><h1 class="text-center text-white">{{ annonce.titre }}</h1></p>
   <div class="card">
+  <h1 class="text-center">{{ annonce.titre }}</h1></br>
     <div class="info">
       <span id="libelle">{{'annonces.places'|trans }} :</span> {{ annonce.places }} </br>
       <span id="libelle">{{'annonces.adresse'|trans }} :</span> {{ location.adresse }} </br>
@@ -13,9 +13,17 @@
       <span id="libelle">{{'annonces.loyer'|trans }} :</span> {{ location.loyerhc }} </br>
       <span id="libelle">{{'annonces.charges'|trans }} : </span>{{ location.charges }} </br>
       <span id="libelle">{{'annonces.description'|trans }} : </span>{{ annonce.description }}
-      </div>
 
     <div class="line"></div>
+
+      <div class="date">{{ annonce.dateCreation }}</div>
+      <h2>{{'user.contact'|trans }}</h2>
+      <span id="libelle">{{'user.annonceur'|trans }} :</span> {{ user.username }} </br>
+      <span id="libelle">{{'user.mail'|trans }} :</span> {{ user.email }} </br>
+
+    <div class="line"></div>
+
+    </div>
 
     <div class="btn_center">
       <div>
