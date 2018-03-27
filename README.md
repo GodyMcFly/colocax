@@ -23,5 +23,6 @@ Générez la base de données avec les commandes :
 ## Etape 4
 Vous pouvez désormais utiliser l'application Colocax via votre navigateur :
 - localhost/colocax/web/app_dev.php/fr/
+
 Il est possible de créer un compte administrateur avec la commande :
 - php bin/console fos:user:create leNomUtilisateur --super-admin
