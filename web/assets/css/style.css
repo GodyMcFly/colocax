@@ -241,6 +241,10 @@ body{
   justify-content: left;
 }
 
+.bread{
+  max-width: 18%;
+}
+
 .bread ol{
   box-shadow: 0px 1px 10px #af6844;
   background-color: white !important;

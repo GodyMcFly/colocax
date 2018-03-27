@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
+
     /**
      * @Route("/{_locale}/profile/template", name="template")
      */

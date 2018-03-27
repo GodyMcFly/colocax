@@ -149,6 +149,7 @@ class AnnonceController extends Controller {
     $breadcrumbs->addItem("Home", $this->get("router")->generate("annonces"));
     $breadcrumbs->addItem("Annonces");
     $breadcrumbs->addItem("Mes annonces");
+    $breadcrumbs->addItem($annonce->getTitre());
 
     return $this->render('/details.html.twig', array('annonce' => $annonce, 'location' => $location, 'user' => $user, 'id' => $id));
   }

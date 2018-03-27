@@ -28,15 +28,14 @@ class RedirectController extends Controller
     */
     public function updateAction(Request $request)
     {
+      $em = $this->getDoctrine()->getManager();
+      $annonce = $em->getReference('AppBundle:Annonce', $_POST['modifier']);
+      $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
 
       $breadcrumbs = $this->get("white_october_breadcrumbs");
       $breadcrumbs->addItem("Home", $this->get("router")->generate("modifier"));
       $breadcrumbs->addItem("Annonces");
-      $breadcrumbs->addItem("Modifier une annonce");
-
-      $em = $this->getDoctrine()->getManager();
-      $annonce = $em->getReference('AppBundle:Annonce', $_POST['modifier']);
-      $location = $em->getReference('AppBundle:Location', $annonce->getIdLogement());
+      $breadcrumbs->addItem("Modifier l'annonce ".$annonce->getTitre());
 
         return $this->render('/update.html.twig', array('titre' => $annonce->getTitre(),
         'places' => $annonce->getPlaces(), 'description' => $annonce->getDescription(),
