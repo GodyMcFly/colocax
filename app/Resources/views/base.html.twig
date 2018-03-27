@@ -1,84 +1,92 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-      <meta charset="UTF-8" />
-      <title>{% block title %}Trouver une colocation{% endblock %}</title>
-      {% block stylesheets %}
-      {% if app.user != null %}
-      {{app.user.css}}
-        <link rel="stylesheet" href="{{ asset('assets/css/' ~ app.user.css ~ '.css') }}" />
-      {% else %}
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-      {% endif %}
+  <head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Trouver une colocation{% endblock %}</title>
+  {% block stylesheets %}
+    {% if app.user != null %}
+      <link rel="stylesheet" href="{{ asset('assets/css/' ~ app.user.css ~ '.css') }}" />
+    {% else %}
+      <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    {% endif %}
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      {% endblock %}
-      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
+  {% endblock %}
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
 
-    <body>
-      <div class="gradient_blue">
-        <div class="nav-contour fixed-top">
-          <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
-          <div class="colocax">
-            <a class="navbar-brand text-color" href="{{ path('homepage') }}"><img src="{{asset('assets/images/logo.png')}}"  height="30" class="d-inline-block align-top" alt="">Colocax</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                  <li class="nav-item">
-                    <a href="{{ path('lire') }}" class="nav-link">{{ 'nav.rechercher_ann'|trans }}</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ path('create') }}" class="nav-link">{{ 'nav.creer_ann'|trans }}</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ path('fos_user_profile_show') }}">{{'nav.moncompte'|trans }}</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'nav.logout'|trans }}</a>
-                  </li>
-                </ul>
-                {% else %}
-                  </ul>
-                  <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'nav.login'|trans }}</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'nav.sign_up'|trans }}</a>
-                      </li>
-                    </ul>
-                {% endif %}
-            </div>
-          </nav>
-          <div class="bouton_sec">
-            <div class="bread">
-              {{ wo_render_breadcrumbs() }}
-            </div>
-            <div class="btn_langues_right">
-            <div>
-              <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
-              </div>
-              <div>
-              <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
-</div>
-            </div>
-          </div>
-    </div>
-        <div class="div_center">
-        <div class="espace"></div>
+<body>
+  <div class="gradient_blue">
 
-          {% block body %}{% endblock %}
-          {% block javascripts %}
-          {% endblock %}
+    <!--Barre de navigation-->
+    <div class="nav-contour fixed-top">
+
+    <!--1ere barre-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="colocax">
+          <a class="navbar-brand text-color" href="{{ path('homepage') }}"><img src="{{asset('assets/images/logo.png')}}"  height="30" class="d-inline-block align-top" alt="">Colocax</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <li class="nav-item">
+              <a href="{{ path('lire') }}" class="nav-link">{{ 'nav.rechercher_ann'|trans }}</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ path('create') }}" class="nav-link">{{ 'nav.creer_ann'|trans }}</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('fos_user_profile_show') }}">{{'nav.moncompte'|trans }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{'nav.logout'|trans }}</a>
+            </li>
+          </ul>
+          {% else %}
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{'nav.login'|trans }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{'nav.sign_up'|trans }}</a>
+              </li>
+            </ul>
+          {% endif %}
+        </div>
+      </nav>
+
+      <!--File d'ariane-->
+      <div class="bouton_sec">
+        <div class="bread">
+          {{ wo_render_breadcrumbs() }}
+        </div>
+
+        <!--Bouton de langues-->
+        <div class="btn_langues_right">
+          <div>
+            <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
+          </div>
+          <div>
+            <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
           </div>
         </div>
       </div>
-    </body>
+    </div>
+    <div class="div_center">
+    <div class="espace"></div>
+
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {% endblock %}
+    </div>
+    </div>
+  </div>
+</body>
 </html>

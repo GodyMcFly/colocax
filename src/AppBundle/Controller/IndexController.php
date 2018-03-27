@@ -13,9 +13,8 @@ class IndexController extends Controller
      */
     public function indexAction(Request $request)
     {
-
+        //File d'ariane
         $breadcrumbs = $this->get("white_october_breadcrumbs");
-        // Simple example
         $breadcrumbs->addItem("Home", $this->get("router")->generate("homepage"));
 
         return $this->render('/index.html.twig');

@@ -31,7 +31,7 @@ annonces:
     charges: 'Charges'
     ajouter: 'Add'
     type: 'Type'
-    details: 'Show détails'
+    details: 'Show details'
     annonces: "My roomates"
     rechercher: "Search"
     exemple: "Flat, house, Nantes.."

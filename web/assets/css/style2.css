@@ -16,11 +16,6 @@ body{
   align-items: center;
 }
 
-.btn_left{
-  display: flex;
-  justify-content: left;
-}
-
 .btn_center{
   display: flex;
   text-align: center;
@@ -31,6 +26,21 @@ body{
   display: flex;
   text-align: right;
   justify-content: right;
+}
+
+.bouton_sec{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rect{
+  height: 50px;
+}
+
+.btn_left{
+  display: flex;
+  justify-content: left;
+  text-align: left;
 }
 
 .colocax{
@@ -71,7 +81,7 @@ body{
 .btn:hover{
   text-decoration: none;
   text-transform: none;
-  color: #212121;
+  color: #424242;
   background-color: white;
 }
 
@@ -84,8 +94,8 @@ body{
   margin-right: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border-radius: 0px!important;
-  border: 2px solid white!important;
+  border-radius: 2px!important;
+  border: 0px solid white!important;
   background-color:  #424242;
 }
 
@@ -94,19 +104,19 @@ body{
   text-transform: none;
   cursor: pointer;
   color: white !important;
-  background-color: #9E9E9E;
+  background-color: #757575;
 }
 
 .btn3{
   display: flex;
   text-decoration: none;
   text-transform: none;
-  color: grey !important;
-  padding: 10px;
+  color:#424242 !important;
+  padding: 7px;
   margin-right: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border-radius: 0px!important;
+  border-radius: 2px!important;
   border: 0px solid white!important;
   background-color:  white;
 }
@@ -115,8 +125,12 @@ body{
   text-decoration: none;
   text-transform: none;
   cursor: pointer;
-  color: grey !important;
-  background-color: lightgrey;
+  color: #424242 !important;
+  background-color: #757575;
+}
+
+.input{
+  width: 500px!important;
 }
 
 .btn_supprimer{
@@ -129,7 +143,7 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0px!important;
-  border: 2px solid white!important;
+  border: 0px solid white!important;
   background-color: #7f2a2a;
 }
 
@@ -155,12 +169,13 @@ body{
   text-transform: none;
   color: grey;
   background-color: white;
+  border-radius: 0px 0px 5px 5px !important;
 }
 
 .btn_langues:active{
   text-decoration: none;
   text-transform: none;
-  color: #f46b45;
+  color: #424242;
   background-color: white;
 }
 
@@ -218,4 +233,25 @@ body{
 
 .infos{
   font-size: 18px;
+}
+
+.center{
+  display: flex;
+  justify-content: left;
+}
+
+.bread{
+  max-width: 18%;
+}
+
+.bread ol{
+  box-shadow: 0px 1px 10px grey;
+  background-color: white !important;
+  border-radius: 0px 0px 5px 0px !important;
+  font-size: 11px !important;
+}
+
+.shadow{
+
+    box-shadow: 0px 1px 10px grey;
 }
