@@ -27,7 +27,7 @@
             <button type="submit" class="btn2" >{{'annonces.details'|trans }}</button>
           </form>
           </div>
-          {% if annonce.idUser == id %}
+          {% if annonce.idUser == id or is_granted('ROLE_ADMIN')%}
             <div>
             <form action="{{ path('update') }}" method="POST">
               <input type="hidden" name="modifier" value={{ annonce.idAnnonce }} />

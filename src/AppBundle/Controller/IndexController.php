@@ -13,7 +13,11 @@ class IndexController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $breadcrumbs = $this->get("white_october_breadcrumbs");
+
+        // Simple example
+        $breadcrumbs->addItem("Home", $this->get("router")->generate("index"));
+        
         return $this->render('/index.html.twig');
     }
 }

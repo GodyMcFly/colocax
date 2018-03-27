@@ -78,3 +78,8 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+templating:
+    engines: ['twig']
+
+white_october_breadcrumbs: ~
