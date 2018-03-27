@@ -6,11 +6,12 @@ Require:
 	- composer
 	- doctrine 
 
-Pour déployer le site web en local :
-- Avoir composer d'installé ;
+Pour dÃ©ployer le site web en local :
+- Avoir composer d'installÃ© ;
 - Cloner le repository sur votre serveur (pour Wamp par exemple --> wamp64/www/colocax)
-- Ouvrir un terminal dans le dossier colocax/ et effectuer la commande composer update
-- Pour générer la base de données, faire :
+- Ouvrir un terminal dans le dossier colocax/ et effectuer la commande :
+	- composer update
+- Pour gÃ©nÃ©rer la base de donnÃ©es, faire :
 	- php bin/console doctrine:schema:create
 	- php bin/console doctrine:schema:update --force
 
