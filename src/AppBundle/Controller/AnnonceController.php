@@ -12,6 +12,8 @@ class AnnonceController extends Controller {
   */
   public function ajoutAction(Request $request)
   {
+    if(!(isset($_POST['ajout']))){
+
     if( !(isset($_POST['titre']))
      || !(isset($_POST['places']))
      || !(isset($_POST['adresse']))
@@ -50,6 +52,10 @@ class AnnonceController extends Controller {
       $response = $this->forward('AppBundle\Controller\AnnonceController::readAction');
       return $response;
     }
+  }
+  else{
+    return $this->render('/create.html.twig', array('message' => 'Veuillez remplir correctement le formulaire.'));
+  }
 
   }
 

@@ -19,7 +19,7 @@
     <body>
       <div class="gradient_blue">
         <div class="nav-contour fixed-top">
-          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
           <div class="colocax">
             <a class="navbar-brand text-color" href="{{ path('homepage') }}"><img src="{{asset('assets/images/logo.png')}}"  height="30" class="d-inline-block align-top" alt="">Colocax</a>
           </div>
@@ -57,13 +57,19 @@
                 {% endif %}
             </div>
           </nav>
-        <div class="btn_langues_right">
-          <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
-          <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
-      </div>
-      {# <div class="btn_center">
-        {{ wo_render_breadcrumbs() }}
-    </div> #}
+          <div class="bouton_sec">
+            <div class="bread">
+              {{ wo_render_breadcrumbs() }}
+            </div>
+            <div class="btn_langues_right">
+            <div>
+              <a href="{{ path('homepage', {'_locale':'fr'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_fr.png') }}" alt="flag" />{{ 'nav.langue_fr'|trans }}</a>
+              </div>
+              <div>
+              <a href="{{ path('homepage', {'_locale':'en'}) }}" class="btn_langues"><img id="flag_icon" src="{{ asset('assets/images/flag_en.png') }}" alt="flag" />{{ 'nav.langue_en'|trans }}</a>
+</div>
+            </div>
+          </div>
     </div>
         <div class="div_center">
         <div class="espace"></div>

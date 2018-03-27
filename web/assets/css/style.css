@@ -1,6 +1,6 @@
 body{
   height: 100%;
- background-image:linear-gradient(to right, #f46b45, #eea849);
+  background-image:linear-gradient(to right, #f46b45, #eea849);
   background-image:-moz-linear-gradient(left, #f46b45, #eea849);
   padding: 25px;
 }
@@ -29,9 +29,19 @@ body{
   justify-content: right;
 }
 
+.bouton_sec{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rect{
+  height: 50px;
+}
+
 .btn_left{
   display: flex;
   justify-content: left;
+  text-align: left;
 }
 
 .colocax{
@@ -160,6 +170,7 @@ body{
   text-transform: none;
   color: grey;
   background-color: white;
+  border-radius: 0px 0px 5px 5px !important;
 }
 
 .btn_langues:active{
@@ -223,4 +234,21 @@ body{
 
 .infos{
   font-size: 18px;
+}
+
+.center{
+  display: flex;
+  justify-content: left;
+}
+
+.bread ol{
+  box-shadow: 0px 1px 10px #af6844;
+  background-color: white !important;
+  border-radius: 0px 0px 5px 0px !important;
+  font-size: 11px !important;
+}
+
+.shadow{
+
+    box-shadow: 0px 1px 10px #af6844;
 }

@@ -5,6 +5,9 @@
 <h1 class="text-center text-white">{{'nav.creer_ann'|trans }}</h1>
 
 <div class="card">
+{% if message is defined %}
+<p class="messages">{{ message }}</p>
+{% endif %}
 
 <form action= "{{ path('ajout') }}" method="POST">
 
@@ -62,15 +65,11 @@
 
 <div class="btn_center">
   <div>
-    <button type="submit" class="btn2">{{'annonces.ajouter'|trans }}</button>
+    <button type="submit" name="ajout" class="btn2">{{'annonces.ajouter'|trans }}</button>
   </div>
 </div>
 
 </div>
-
-{% if message is defined %}
-<p>{{ message }}</p>
-{% endif %}
 </form>
 </div>
 {% endblock %}
