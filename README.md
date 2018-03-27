@@ -1,17 +1,25 @@
-# Projet universitaire - Site web de colocations
+# Colocax
+Projet universitaire - Site web d'annonces de colocations
 
-Require: 
-	- php 5.4
-	- twig 2.0
-	- composer
-	- doctrine 
+## Etape 0
+S'assurer que vous disposez de toutes ces technologies :
+- php 5.4
+- twig 2.0
+- composer
+- doctrine 
+	
+## Etape 1
+Dans le dossier mis à diposition par votre serveur web, cloner le repository depuis l'adresse : https://github.com/GodyMcFly/colocax
 
-Pour déployer le site web en local :
-- Avoir composer d'installé ;
-- Cloner le repository sur votre serveur (pour Wamp par exemple --> wamp64/www/colocax)
-- Ouvrir un terminal dans le dossier colocax/ et effectuer la commande :
-	- composer update
-- Pour générer la base de données, faire :
-	- php bin/console doctrine:schema:create
-	- php bin/console doctrine:schema:update --force
+## Etape 2
+Dans la racine du projet (pour Wamp par exemple: wamp/www/colocax), installé les dépendances du projet en effectuant la commande :
+- composer update
 
+## Etape 3
+Générez la base de données avec les commandes :
+- php bin/console doctrine:schema:create
+- php bin/console doctrine:schema:update --force
+
+## Etape 4
+Vous pouvez désormais utiliser l'application Colocax via votre navigateur :
+- localhost/colocax/web/app_dev.php/fr/
