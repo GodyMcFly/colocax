@@ -28,36 +28,33 @@ class AnnonceController extends Controller {
         return $this->render('/create.html.twig', array('message' => 'Veuillez remplir correctement le formulaire.'));
 
       }
-      //Si les champs sont tous remplis
-      else {
-        $location = new Location();
-        $location->setAdresse($_POST['adresse']);
-        $location->setVille($_POST['ville']);
-        $location->setType($_POST['type']);
-        $location->setNbrpieces($_POST['nbrpieces']);
-        $location->setSurface($_POST['surface']);
-        $location->setLoyerhc($_POST['loyerhc']);
-        $location->setCharges($_POST['charges']);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($location);
-        $em->flush();
-        $annonce = new Annonce();
-        $annonce->setTitre($_POST['titre']);
-        $annonce->setPlaces($_POST['places']);
-        $annonce->setIdLogement($location->getIdLogement());
-        $annonce->setDescription($_POST['descr']);
-        $date = date("d-m-Y");
-        $annonce->setDateCreation($date);
-        $annonce->setIdUser($id = $user = $this->getUser()->getId());
-        $em->persist($annonce);
-        $em->flush();
-
-        $response = $this->forward('AppBundle\Controller\AnnonceController::readAction');
-        return $response;
-      }
     }
     else{
-      return $this->render('/create.html.twig', array('message' => 'Veuillez remplir correctement le formulaire.'));
+
+      $location = new Location();
+      $location->setAdresse($_POST['adresse']);
+      $location->setVille($_POST['ville']);
+      $location->setType($_POST['type']);
+      $location->setNbrpieces($_POST['nbrpieces']);
+      $location->setSurface($_POST['surface']);
+      $location->setLoyerhc($_POST['loyerhc']);
+      $location->setCharges($_POST['charges']);
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($location);
+      $em->flush();
+      $annonce = new Annonce();
+      $annonce->setTitre($_POST['titre']);
+      $annonce->setPlaces($_POST['places']);
+      $annonce->setIdLogement($location->getIdLogement());
+      $annonce->setDescription($_POST['descr']);
+      $date = date("d-m-Y");
+      $annonce->setDateCreation($date);
+      $annonce->setIdUser($id = $user = $this->getUser()->getId());
+      $em->persist($annonce);
+      $em->flush();
+
+      $response = $this->forward('AppBundle\Controller\AnnonceController::readAction');
+      return $response;
     }
 
   }
