@@ -13,52 +13,52 @@
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.title'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="titre">
+ <input {% if titre is defined %} value="{{ titre }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="titre">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.places'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="places">
+ <input {% if places is defined %} value="{{ places }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="places">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.adresse'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="adresse">
+ <input {% if adresse is defined %} value="{{ adresse }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="adresse">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.ville'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="ville">
+ <input {% if ville is defined %} value="{{ ville }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="ville">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.type'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="type">
+ <input {% if type is defined %} value="{{ type }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="type">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.pieces'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nbrpieces">
+ <input {% if nbrpieces is defined %} value="{{ nbrpieces }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nbrpieces">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.surface'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="surface">
+ <input {% if surface is defined %} value="{{ surface }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="surface">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.loyer'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="loyerhc">
+ <input {% if loyerhc is defined %} value="{{ loyerhc }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="loyerhc">
 </div>
 
 <div class="form-group">
    <label for="exampleFormControlInput1">{{'annonces.charges'|trans }}</label>
-   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="charges">
+ <input {% if charges is defined %} value="{{ charges }}" {% endif %} type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="charges">
 </div>
 
 <div class="form-group">
     <label for="exampleFormControlTextarea1">{{'annonces.description'|trans }}</label>
-    <textarea class="form-control" aria-label="With textarea" name="descr"></textarea>
+  <textarea class="form-control" aria-label="With textarea" name="descr">{% if description is defined %} {{ description }} {% endif %}</textarea>
 </div>
 
 </br>

@@ -39,6 +39,12 @@
         <button type="submit" class="btn_supprimer"><img id="trash" src="{{ asset('assets/images/trash.png') }}"/></button>
       </form>
       </div>
+      <div>
+      <form action="{{ path('dupliquer') }}" method="POST">
+        <input type="hidden" name="dupliquer" value={{ annonce.idAnnonce }} />
+        <button type="submit" class="btn2">Dupliquer</button>
+      </form>
+      </div>
     </div>
     {% endif %}
   </div>

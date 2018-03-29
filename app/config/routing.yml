@@ -62,3 +62,7 @@ search:
 annonces:
     path:     /{_locale}/annonces
     defaults: { _controller: '\AppBundle\Controller\AnnonceController::annoncesAction' }
+
+dupliquer:
+    path:     /{_locale}/dupliquer
+    defaults: { _controller: '\AppBundle\Controller\RedirectController::dupliquerAction' }
