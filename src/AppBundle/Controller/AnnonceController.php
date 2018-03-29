@@ -114,6 +114,11 @@ class AnnonceController extends Controller {
   */
   public function modifierAction(Request $request)
   {
+
+    $id = $user = $this->getUser()->getId();
+    $locations = $this->getDoctrine()->getManager()->getRepository('AppBundle:Location');
+    $loc = $locations->findAll();
+
     $repository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Annonce');
     $em = $this->getDoctrine()->getManager();
     $annonce = $em->getReference('AppBundle:Annonce', $_POST['id']);
@@ -130,7 +135,7 @@ class AnnonceController extends Controller {
     $location->setCharges($_POST['charges']);
     $em->flush();
     $result = $repository->findAll();
-    return $this->render('/read.html.twig', array('annonces' => $result));
+    return $this->render('/read.html.twig', array('annonces' => $result, 'locations' => $loc, 'id' => $id));
   }
   /*
   @Route("/details/", name="details")
